@@ -10,12 +10,15 @@ const total = async () =>{
         thumbnail : "sin imagen",
         code : "abc123",
         stock : "25"
-    }
+    }    
     let result = await manager.agrearProducto(products);
     console.log(result)
 
     let producto = await manager.consultaProducto();
     console.log(producto)
+
+    let borrar = await manager.deleteProducts();
+    console.log(borrar)
 
 }
 

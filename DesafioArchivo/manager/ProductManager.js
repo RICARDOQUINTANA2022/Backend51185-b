@@ -26,5 +26,18 @@ export default class ProductManager {
         return producto
     }
     
+   deleteProducts = async (producto) => {
+        const products = await this.consultaProducto();
+
+        if(products.length === 0){
+            console.log("no hay productos");
+        }else{
+            producto = products.splice(0,1)
+        }
+        
+        
+        await fs.promises.writeFile(path, JSON.stringify(products,null, '\t'));
+        return producto;
+        }
+    };
     
-}
